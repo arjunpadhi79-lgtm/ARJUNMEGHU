@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine ❤️</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: pink;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: red;
+            color: white;
+            margin-right: 20px;
+        }
+
+        #no {
+            background-color: white;
+            color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WILL YOU BE MY VALENTINE? 💖</h1>
+
+    <div>
+        <button id="yes" onclick="yesClicked()">Yes ❤️</button>
+        <button id="no">No 😢</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("no");
+
+        noBtn.addEventListener("touchstart", moveButton);
+        noBtn.addEventListener("mouseover", moveButton);
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        function yesClicked() {
+            document.body.innerHTML = "<h1>YAYYYY 😍❤️<br>You’re my Valentine 💕</h1>";
+        }
+    </script>
+
+</body>
+</html>
